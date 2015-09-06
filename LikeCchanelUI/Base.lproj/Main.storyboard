@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,8 +17,67 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z4D-r5-A9M">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aYw-1t-VfR" userLabel="Container">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="1200"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Yf-rL-19E" userLabel="BottomView">
+                                                <rect key="frame" x="0.0" y="600" width="600" height="600"/>
+                                                <color key="backgroundColor" red="0.0" green="1" blue="0.058823533359999999" alpha="1" colorSpace="deviceRGB"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="phE-FQ-JZR" userLabel="TopView">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                                <color key="backgroundColor" red="0.2156862745" green="0.40784313729999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.99215686270000003" green="0.25490196079999999" blue="0.094117647060000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="2Yf-rL-19E" firstAttribute="top" secondItem="phE-FQ-JZR" secondAttribute="bottom" id="H9a-Mm-7EA"/>
+                                            <constraint firstAttribute="trailing" secondItem="2Yf-rL-19E" secondAttribute="trailing" id="HRX-jh-Acn"/>
+                                            <constraint firstAttribute="bottom" secondItem="2Yf-rL-19E" secondAttribute="bottom" id="Q0U-43-BH2"/>
+                                            <constraint firstAttribute="height" constant="600" id="ReO-2X-Rxx"/>
+                                            <constraint firstItem="phE-FQ-JZR" firstAttribute="leading" secondItem="aYw-1t-VfR" secondAttribute="leading" id="VI6-qW-J8g"/>
+                                            <constraint firstItem="phE-FQ-JZR" firstAttribute="top" secondItem="aYw-1t-VfR" secondAttribute="top" id="b5I-4W-Sb7"/>
+                                            <constraint firstItem="2Yf-rL-19E" firstAttribute="leading" secondItem="aYw-1t-VfR" secondAttribute="leading" id="oNP-sV-Q4e"/>
+                                            <constraint firstAttribute="trailing" secondItem="phE-FQ-JZR" secondAttribute="trailing" id="xRO-M1-U3V"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="ReO-2X-Rxx"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="aYw-1t-VfR" firstAttribute="centerX" secondItem="z4D-r5-A9M" secondAttribute="centerX" id="3Pn-as-ndU"/>
+                                    <constraint firstItem="aYw-1t-VfR" firstAttribute="leading" secondItem="z4D-r5-A9M" secondAttribute="leading" id="ETX-kf-xHO"/>
+                                    <constraint firstAttribute="height" secondItem="phE-FQ-JZR" secondAttribute="height" id="HQU-9j-15p"/>
+                                    <constraint firstItem="aYw-1t-VfR" firstAttribute="height" secondItem="z4D-r5-A9M" secondAttribute="height" multiplier="2" id="JvI-26-oyk"/>
+                                    <constraint firstAttribute="bottom" secondItem="aYw-1t-VfR" secondAttribute="bottom" id="cLc-vL-JN0"/>
+                                    <constraint firstItem="aYw-1t-VfR" firstAttribute="top" secondItem="z4D-r5-A9M" secondAttribute="top" id="cou-pD-Epn"/>
+                                    <constraint firstAttribute="trailing" secondItem="aYw-1t-VfR" secondAttribute="trailing" id="hjB-rh-jnd"/>
+                                    <constraint firstItem="2Yf-rL-19E" firstAttribute="height" secondItem="z4D-r5-A9M" secondAttribute="height" id="ijF-Wb-h8Z"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="z4D-r5-A9M" secondAttribute="bottom" id="SdL-B2-V2P"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="z4D-r5-A9M" secondAttribute="trailing" constant="-16" id="bMz-9N-UUP"/>
+                            <constraint firstItem="z4D-r5-A9M" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="bom-8u-S4c"/>
+                            <constraint firstItem="z4D-r5-A9M" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="tR2-Kj-bgo"/>
+                        </constraints>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
+                    <connections>
+                        <outlet property="bottomView" destination="2Yf-rL-19E" id="gPG-4b-boD"/>
+                        <outlet property="myscroll" destination="z4D-r5-A9M" id="M1t-t4-7jS"/>
+                        <outlet property="topView" destination="phE-FQ-JZR" id="lCR-bY-LLO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
